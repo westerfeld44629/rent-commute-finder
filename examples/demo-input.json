@@ -1,0 +1,503 @@
+{
+  "synthetic": true,
+  "requirements": {
+    "city": "xx市",
+    "office": "xx办公楼（虚构地址）",
+    "budget_max": 2500,
+    "commute_max_min": 60,
+    "modes": [
+      "transit",
+      "ebike"
+    ],
+    "must_have": [
+      "private_bath",
+      "elevator"
+    ]
+  },
+  "listings": [
+    {
+      "community": "演示小区A",
+      "title": "合成房间1",
+      "rent": 2300,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": true,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-1",
+        "url": "https://housing.example.invalid/room/demo-1",
+        "observed_at": "2026-10-19T08:00:00+08:00",
+        "kind": "detail"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2300元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "elevator": "合成测试：有电梯",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-1",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-1",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    },
+    {
+      "community": "演示小区A",
+      "title": "合成房间1",
+      "rent": 2300,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": true,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-1",
+        "url": "https://housing.example.invalid/room/demo-1",
+        "observed_at": "2026-10-19T08:00:00+08:00",
+        "kind": "detail"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2300元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "elevator": "合成测试：有电梯",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-1",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-1",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    },
+    {
+      "community": "演示小区A",
+      "title": "合成房间2（同小区不同房间）",
+      "rent": 2100,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": true,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-2",
+        "url": "https://housing.example.invalid/room/demo-2",
+        "observed_at": "2026-10-19T08:00:00+08:00",
+        "kind": "detail"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2100元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "elevator": "合成测试：有电梯",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-2",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-2",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    },
+    {
+      "community": "演示小区A",
+      "title": "合成房间3（电梯未知）",
+      "rent": 2300,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": null,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-3",
+        "url": "https://housing.example.invalid/room/demo-3",
+        "observed_at": "2026-10-19T08:00:00+08:00",
+        "kind": "detail"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2300元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-3",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-3",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    },
+    {
+      "community": "演示小区A",
+      "title": "合成房间4（超预算）",
+      "rent": 2600,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": true,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-4",
+        "url": "https://housing.example.invalid/room/demo-4",
+        "observed_at": "2026-10-19T08:00:00+08:00",
+        "kind": "detail"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2600元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "elevator": "合成测试：有电梯",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-4",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-4",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    },
+    {
+      "community": "演示小区A",
+      "title": "合成房间5（电动车超时）",
+      "rent": 2300,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": true,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-5",
+        "url": "https://housing.example.invalid/room/demo-5",
+        "observed_at": "2026-10-19T08:00:00+08:00",
+        "kind": "detail"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2300元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "elevator": "合成测试：有电梯",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-5",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 70,
+          "upper_min": 75,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-5",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    },
+    {
+      "community": "演示小区A",
+      "title": "合成房间6（只有搜索摘要）",
+      "rent": 2300,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": true,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-6",
+        "url": "https://housing.example.invalid/room/demo-6",
+        "observed_at": "2026-10-19T08:00:00+08:00",
+        "kind": "search_snippet"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2300元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "elevator": "合成测试：有电梯",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-6",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-6",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    },
+    {
+      "community": "演示小区A",
+      "title": "合成房间7（电动车仅模型估算）",
+      "rent": 2300,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": true,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-7",
+        "url": "https://housing.example.invalid/room/demo-7",
+        "observed_at": "2026-10-19T08:00:00+08:00",
+        "kind": "detail"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2300元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "elevator": "合成测试：有电梯",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-7",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "estimate",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-7",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    },
+    {
+      "community": "演示小区A",
+      "title": "合成房间8（过期页面）",
+      "rent": 2300,
+      "area_sqm": 20,
+      "area_basis": "房间面积",
+      "private_bath": true,
+      "elevator": true,
+      "available": true,
+      "source": {
+        "platform": "synthetic",
+        "listing_id": "demo-8",
+        "url": "https://housing.example.invalid/room/demo-8",
+        "observed_at": "2026-10-01T08:00:00+08:00",
+        "kind": "detail"
+      },
+      "evidence": {
+        "rent": "合成测试：月租2300元",
+        "private_bath": "合成测试：该房间独立卫生间",
+        "elevator": "合成测试：有电梯",
+        "available": "合成测试：当前可租"
+      },
+      "routes": {
+        "transit": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-8",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        },
+        "ebike": {
+          "duration_min": 40,
+          "upper_min": 50,
+          "basis": "navigation",
+          "source_url": "https://maps.example.invalid/route",
+          "checked_at": "2026-10-19T08:00:00+08:00",
+          "time_window": "weekday_peak",
+          "door_to_door": true,
+          "restriction_checked": true,
+          "allowed": true,
+          "origin_ref": "demo-8",
+          "destination": "xx办公楼（虚构地址）",
+          "upper_basis": "合成测试：高峰预测上界并加入进出楼步行"
+        }
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "platform": "synthetic",
+      "query": "虚构城市通勤租房合成测试",
+      "result": "未请求真实平台；9条合成记录用于验证三态、去重与全量报告",
+      "checked_at": "2026-10-19T08:00:00+08:00"
+    }
+  ]
+}

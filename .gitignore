@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+_test_out.txt
+my.json
+.venv/
+work/
+dist/
+reports/
+.env
+.env.*
+!.env.example
+*.pem
+*.key

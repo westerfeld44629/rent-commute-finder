@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "rent-commute-finder evidence input 1.1.1",
+  "type": "object",
+  "required": ["requirements", "listings"],
+  "properties": {
+    "synthetic": {"type": "boolean", "default": false},
+    "requirements": {
+      "type": "object",
+      "required": ["city", "office", "budget_max", "commute_max_min", "modes"],
+      "properties": {
+        "city": {"type": "string", "minLength": 1},
+        "office": {"type": "string", "minLength": 1},
+        "budget_max": {"type": "number", "exclusiveMinimum": 0},
+        "budget_basis": {"enum": ["rent", "monthly_total"], "default": "rent"},
+        "commute_max_min": {"type": "number", "exclusiveMinimum": 0},
+        "modes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["transit", "ebike", "bike", "car"]}},
+        "mode_policy": {"enum": ["all", "any"], "default": "all"},
+        "time_window": {"enum": ["weekday_peak", "offpeak"], "default": "weekday_peak"},
+        "must_have": {"type": "array", "items": {"enum": ["private_bath", "elevator"]}},
+        "max_listing_age_hours": {"type": "number", "exclusiveMinimum": 0, "default": 48},
+        "max_route_age_hours": {"type": "number", "exclusiveMinimum": 0, "default": 24}
+      }
+    },
+    "coverage": {
+      "type": "array",
+      "items": {"type": "object", "properties": {
+        "platform": {"type": "string"}, "query": {"type": "string"},
+        "result": {"type": "string", "description": "查询范围/页数/条数/失败原因，不应包含原始联系方式"},
+        "checked_at": {"type": "string"}
+      }}
+    },
+    "listings": {"type": "array", "maxItems": 5000, "items": {"$ref": "#/$defs/listing"}}
+  },
+  "$defs": {
+    "route": {
+      "type": "object",
+      "description": "每种方式的完整门到门路线；未知可省略。保守上界需有依据，不允许默认±10%。",
+      "properties": {
+        "duration_min": {"type": ["number", "null"], "minimum": 0},
+        "upper_min": {"type": ["number", "null"], "minimum": 0},
+        "basis": {"enum": ["navigation", "measured", "estimate"]},
+        "source_url": {"type": "string"}, "checked_at": {"type": "string"},
+        "origin_ref": {"type": "string", "description": "该套 source.listing_id，无 ID 时为公开详情 URL"},
+        "destination": {"type": "string", "description": "与 requirements.office 一致的办公楼锚点"},
+        "upper_basis": {"type": "string", "description": "保守上界的依据，例如同高峰多次预测上界加楼内步行，不可编造"},
+        "time_window": {"enum": ["weekday_peak", "offpeak"]},
+        "door_to_door": {"type": ["boolean", "null"]},
+        "restriction_checked": {"type": ["boolean", "null"]},
+        "allowed": {"type": ["boolean", "null"]}
+      }
+    },
+    "listing": {
+      "type": "object",
+      "description": "逐套/逐房间记录，不能用小区名作主键。缺失字段会进入待核实。",
+      "properties": {
+        "community": {"type": "string"}, "title": {"type": "string"},
+        "rent": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "monthly_total": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "monthly_total_complete": {"type": ["boolean", "null"]},
+        "area_sqm": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "area_basis": {"type": "string", "description": "房间面积/整套面积/使用面积/未知；口径不同不比较元每平米"},
+        "private_bath": {"type": ["boolean", "null"]},
+        "elevator": {"type": ["boolean", "null"]},
+        "available": {"type": ["boolean", "null"]},
+        "source": {"type": "object", "properties": {
+          "platform": {"type": "string"}, "listing_id": {"type": "string"},
+          "url": {"type": "string"}, "observed_at": {"type": "string"},
+          "kind": {"enum": ["detail", "list", "user_evidence", "search_snippet"]}
+        }},
+        "evidence": {"type": "object", "description": "来自该套当前页面的短证据；不填未见过的内容", "properties": {
+          "rent": {"type": "string"}, "monthly_total": {"type": "string"},
+          "private_bath": {"type": "string"}, "elevator": {"type": "string"}, "available": {"type": "string"}
+        }},
+        "routes": {"type": "object", "properties": {
+          "transit": {"$ref": "#/$defs/route"}, "ebike": {"$ref": "#/$defs/route"},
+          "bike": {"$ref": "#/$defs/route"}, "car": {"$ref": "#/$defs/route"}
+        }, "additionalProperties": false}
+      }
+    }
+  }
+}
